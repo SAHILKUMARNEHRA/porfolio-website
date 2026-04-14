@@ -49,12 +49,13 @@ export default function EyeTrackingAvatar() {
       />
       
       {/* The 3D avatar image with tilt effect */}
-      <img 
-        src={memojiUrl} 
-        alt="Engineer working" 
-        className="w-full h-full object-cover relative z-10 rounded-2xl drop-shadow-[0_20px_20px_rgba(0,0,0,0.5)]"
-        style={{ transform: "translateZ(30px)" }}
-      />
+      <div className="w-full h-full relative z-10 rounded-2xl drop-shadow-[0_20px_20px_rgba(0,0,0,0.5)] overflow-hidden" style={{ transform: "translateZ(30px)" }}>
+        <img 
+          src={memojiUrl} 
+          alt="Engineer working" 
+          className="w-full h-[110%] object-cover object-top"
+        />
+      </div>
       
     </motion.div>
   );
