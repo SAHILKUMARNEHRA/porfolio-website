@@ -3,13 +3,13 @@ import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navItems = [
-  { name: "</Home>", href: "#home" },
-  { name: "</AboutMe>", href: "#about" },
-  { name: "</Education>", href: "#education" },
-  { name: "</Experience>", href: "#experience" },
-  { name: "</Skills>", href: "#skills" },
-  { name: "</Projects>", href: "#projects" },
-  { name: "</YouTube>", href: "#youtube" },
+  { name: "Home", href: "#home" },
+  { name: "About", href: "#about" },
+  { name: "Education", href: "#education" },
+  { name: "Experience", href: "#experience" },
+  { name: "Skills", href: "#skills" },
+  { name: "Projects", href: "#projects" },
+  { name: "YouTube", href: "#youtube" },
 ];
 
 export default function Navbar() {
@@ -30,17 +30,21 @@ export default function Navbar() {
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        scrolled ? "bg-zinc-950/70 backdrop-blur-xl border-b border-zinc-800/50 shadow-lg shadow-purple-900/5" : "bg-transparent py-6"
+        scrolled 
+          ? "bg-zinc-950/60 backdrop-blur-2xl border-b border-zinc-800/30 shadow-lg shadow-purple-900/5 py-4" 
+          : "bg-transparent py-6"
       }`}
     >
-      <div className="container mx-auto px-6 md:px-12 flex justify-between items-center h-16">
+      <div className="container mx-auto px-6 md:px-12 flex justify-between items-center">
         <a href="#home" className="text-2xl font-bold text-white tracking-tighter hover:text-purple-400 transition-colors">
           SK<span className="text-purple-500">.</span>
         </a>
 
-        {/* Desktop Nav */}
-        <div className={`hidden md:flex space-x-8 px-6 py-2 rounded-full transition-all duration-300 ${
-          scrolled ? "bg-transparent" : "bg-zinc-900/50 backdrop-blur-sm border border-zinc-800/50"
+        {/* Desktop Nav - Beautiful Glass Pill */}
+        <div className={`hidden md:flex items-center space-x-2 px-6 py-2.5 rounded-full transition-all duration-300 ${
+          scrolled 
+            ? "bg-zinc-900/60 backdrop-blur-2xl border border-zinc-700/50 shadow-[0_8px_32px_rgba(147,51,234,0.1)]" 
+            : "bg-zinc-900/40 backdrop-blur-md border border-zinc-800/60 shadow-xl"
         }`}>
           {navItems.map((item, i) => (
             <motion.a
@@ -49,7 +53,7 @@ export default function Navbar() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3, delay: i * 0.1 }}
               href={item.href}
-              className="text-zinc-400 hover:text-purple-400 transition-colors font-mono text-sm"
+              className="text-zinc-400 hover:text-white hover:bg-zinc-800/50 px-4 py-1.5 rounded-full transition-all duration-300 font-medium text-sm"
             >
               {item.name}
             </motion.a>

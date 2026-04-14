@@ -1,9 +1,15 @@
 import { portfolioData } from "@/config/data";
 import { ChevronDown, Mail } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { TypeAnimation } from "react-type-animation";
 
 export default function Hero() {
   const nameChars = portfolioData.header.name.split("");
+  const { scrollY } = useScroll();
+  
+  // Parallax effect for the image as user scrolls down
+  const imageY = useTransform(scrollY, [0, 500], [0, 100]);
+  const imageScale = useTransform(scrollY, [0, 500], [1, 1.05]);
   
   // Directly embed the uploaded image data for the avatar
   // Note: As an AI, I cannot dynamically generate transparent cutouts of user-uploaded images on the fly, 
@@ -38,8 +44,19 @@ export default function Hero() {
               ))}
               <span className="text-purple-500 animate-pulse">_</span>
             </h1>
-            <h2 className="text-2xl md:text-3xl text-zinc-400 font-bold mt-6 tracking-tight">
-              {portfolioData.header.title}
+            <h2 className="text-2xl md:text-3xl text-zinc-400 font-bold mt-6 tracking-tight h-[40px] md:h-[48px]">
+              <TypeAnimation
+                sequence={[
+                  "Full-Stack Developer", 1000,
+                  "AI Enthusiast", 1000,
+                  "UI/UX Designer", 1000,
+                  portfolioData.header.title, 3000,
+                ]}
+                wrapper="span"
+                speed={50}
+                repeat={Infinity}
+                className="text-purple-400"
+              />
             </h2>
           </div>
 
@@ -70,23 +87,28 @@ export default function Hero() {
           </div>
         </motion.div>
 
-        {/* Real Photo Area */}
+        {/* Real Photo Area with smooth scroll animation */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="relative hidden lg:flex justify-center items-end h-full min-h-[500px]"
+          initial={{ opacity: 0, scale: 0.9, y: 50 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4, type: "spring", stiffness: 100 }}
+          style={{ y: imageY, scale: imageScale }}
+          className="relative hidden lg:flex justify-center items-end h-full min-h-[500px] z-20"
         >
-          <div className="relative w-full max-w-md h-full flex items-end justify-center">
+          <motion.div 
+            className="relative w-full max-w-md h-full flex items-end justify-center"
+            whileHover={{ scale: 1.02 }}
+            transition={{ type: "spring", stiffness: 300, damping: 20 }}
+          >
             {/* Glowing background blob behind the person */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-tr from-purple-500/40 to-blue-500/40 rounded-full blur-3xl" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-gradient-to-tr from-purple-500/30 to-blue-500/30 rounded-full blur-3xl animate-pulse" />
             
             <img
-              src="/avatar.png"
+              src="/my_photo.png"
               alt="Sahil Kumar"
-              className="relative z-10 w-full h-auto object-cover rounded-3xl drop-shadow-2xl max-h-[600px]"
+              className="relative z-10 w-full h-auto object-cover rounded-3xl drop-shadow-[0_20px_50px_rgba(147,51,234,0.25)] border-2 border-zinc-800/30 hover:border-purple-500/50 transition-colors duration-500 max-h-[600px]"
             />
-          </div>
+          </motion.div>
         </motion.div>
       </div>
 
