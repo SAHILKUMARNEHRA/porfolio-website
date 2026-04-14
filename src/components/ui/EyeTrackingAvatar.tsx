@@ -32,8 +32,8 @@ export default function EyeTrackingAvatar() {
     y.set(0);
   };
 
-  // Generated 3D Memoji style image
-  const memojiUrl = "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=highly%20detailed%203d%20apple%20memoji%20style%20avatar%20of%20a%20young%20indian%20guy%20with%20beard%2C%20glasses%2C%20and%20black%20headphones%20looking%20forward%2C%20dark%20transparent%20background&image_size=square";
+  // Local memoji image (add memoji.png to public folder)
+  const memojiUrl = "/memoji.png";
 
   return (
     <motion.div 
@@ -51,9 +51,13 @@ export default function EyeTrackingAvatar() {
       {/* The 3D avatar image with tilt effect */}
       <img 
         src={memojiUrl} 
-        alt="Memoji Avatar" 
+        alt="Engineer working" 
         className="w-full h-full object-cover relative z-10 rounded-2xl drop-shadow-[0_20px_20px_rgba(0,0,0,0.5)]"
         style={{ transform: "translateZ(30px)" }}
+        onError={(e) => {
+          // Fallback if memoji.png is missing - Engineer working on MacBook with coffee
+          e.currentTarget.src = "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=800&auto=format&fit=crop";
+        }}
       />
       
     </motion.div>

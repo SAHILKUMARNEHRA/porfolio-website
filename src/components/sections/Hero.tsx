@@ -107,6 +107,10 @@ export default function Hero() {
               src="/my_photo.png"
               alt="Sahil Kumar"
               className="relative z-10 w-full h-auto object-cover rounded-3xl drop-shadow-[0_20px_50px_rgba(147,51,234,0.25)] border-2 border-zinc-800/30 hover:border-purple-500/50 transition-colors duration-500 max-h-[600px]"
+              onError={(e) => {
+                // Fallback if my_photo.png is missing
+                e.currentTarget.src = "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000&auto=format&fit=crop";
+              }}
             />
           </motion.div>
         </motion.div>
