@@ -93,7 +93,7 @@ export default function Hero() {
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4, type: "spring", stiffness: 100 }}
           style={{ y: imageY, scale: imageScale }}
-          className="relative hidden lg:flex justify-center items-end h-full min-h-[500px] z-20"
+          className="relative flex lg:flex justify-center items-end h-full min-h-[350px] lg:min-h-[500px] z-20 mt-8 lg:mt-0"
         >
           <motion.div 
             className="relative w-full max-w-md h-full flex items-end justify-center"
