@@ -32,8 +32,8 @@ export default function EyeTrackingAvatar() {
     y.set(0);
   };
 
-  // Local memoji image (add memoji.png to public folder)
-  const memojiUrl = "/memoji.png";
+  // AI Generated image of engineer with macbook and cold coffee
+  const memojiUrl = "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=highly%20detailed%203d%20render%20of%20a%20young%20indian%20software%20engineer%20working%20on%20a%20macbook%20on%20a%20desk%20with%20a%20glass%20of%20cold%20coffee%20on%20the%20table%2C%20dark%20aesthetic%2C%20purple%20and%20blue%20neon%20lighting&image_size=square_hd";
 
   return (
     <motion.div 
@@ -54,10 +54,6 @@ export default function EyeTrackingAvatar() {
         alt="Engineer working" 
         className="w-full h-full object-cover relative z-10 rounded-2xl drop-shadow-[0_20px_20px_rgba(0,0,0,0.5)]"
         style={{ transform: "translateZ(30px)" }}
-        onError={(e) => {
-          // Fallback if memoji.png is missing - Engineer working on MacBook with coffee
-          e.currentTarget.src = "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=800&auto=format&fit=crop";
-        }}
       />
       
     </motion.div>
