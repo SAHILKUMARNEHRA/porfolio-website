@@ -102,7 +102,7 @@ export const portfolioData = {
         link: "https://editlancex.vercel.app/",
         github: "https://github.com/SAHILKUMARNEHRA/EditlanceX",
         tech: ["React", "Node.js", "Tailwind", "Socket.io"],
-        image: "/editlance.png"
+        image: "/EditlanceX.jpg"
       },
       {
         name: "Nehra Ji Technical",
@@ -110,7 +110,7 @@ export const portfolioData = {
         link: "https://nehra-ji-technical.vercel.app/",
         github: "https://github.com/SAHILKUMARNEHRA/nehra-ji-technical",
         tech: ["React", "TypeScript", "FastAPI", "Python", "PostgreSQL"],
-        image: "/nehra.png"
+        image: "/Nehrajitechnical.jpg"
       },
       {
         name: "TECHKART",
@@ -118,7 +118,7 @@ export const portfolioData = {
         link: "https://techkartshop.vercel.app/",
         github: "https://github.com/SAHILKUMARNEHRA/TECHKART",
         tech: ["React.js", "Tailwind CSS", "Node.js", "Express", "MongoDB"],
-        image: "/techkart.png"
+        image: "/Techkart.jpg"
       }
     ]
   },
