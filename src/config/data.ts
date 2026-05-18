@@ -4,7 +4,9 @@ export const portfolioData = {
     title: "Full-Stack Developer & AI Enthusiast",
     description: "Motivated B.Tech Computer Engineering (AI/ML) student at Newton School of Technology. I specialize in full-stack development, building real-world projects using React, Python, JavaScript, and PostgreSQL.",
     subDescription: "Proven leadership as President of the Content Creation Club. Passionate about AI tools, clean UI/UX, and scalable architectures.",
-    email: "sk.nehra2005@gmail.com"
+    email: "sk.nehra2005@gmail.com",
+    phones: ["9812005904", "7402307000"],
+    availability: "Open to internships"
   },
   about: {
     title: "About Me",
@@ -16,7 +18,7 @@ export const portfolioData = {
       subtitle: "Crafting the Web & Exploring AI",
       text: "From mastering full-stack frameworks like React and Node.js to diving deep into Generative AI, LangChain, and AI automation tools (ChatGPT, Cursor, Trae, Windsurf, Codex). The web is my canvas, and AI is my co-pilot. I revel in the process of building from scratch and meticulously piecing together lines of code."
     },
-    resumeLink: "/Sahil_Kumar_Resume.pdf"
+    resumeLink: "/resume-sahilkumar.pdf"
   },
   education: [
     {
@@ -119,6 +121,14 @@ export const portfolioData = {
         github: "https://github.com/SAHILKUMARNEHRA/TECHKART",
         tech: ["React.js", "Tailwind CSS", "Node.js", "Express", "MongoDB"],
         image: "/Techkart.jpg"
+      },
+      {
+        name: "SnapLink",
+        description: "Full-stack URL shortener and QR code generator with JWT authentication, custom short codes, a dashboard for link management, and real-time click analytics (device/browser/country).",
+        link: "https://snaplinkqr.vercel.app/",
+        github: "https://github.com/SAHILKUMARNEHRA/SnapLink-URL-Shortener-",
+        tech: ["React", "Node.js", "Express", "MongoDB", "JWT"],
+        image: "/snaplink.jpg"
       }
     ]
   },

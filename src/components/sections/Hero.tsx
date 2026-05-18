@@ -32,6 +32,11 @@ export default function Hero() {
         >
           <div className="space-y-2">
             <p className="text-purple-400 font-mono text-sm tracking-wider uppercase mb-6">Hello, World. I am</p>
+            {portfolioData.header.availability ? (
+              <div className="inline-flex items-center px-3 py-1 rounded-full border border-zinc-800 bg-zinc-900/30 text-zinc-300 text-xs font-mono tracking-wide">
+                {portfolioData.header.availability}
+              </div>
+            ) : null}
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-none flex flex-wrap">
               {nameChars.map((char, index) => (
                 <span

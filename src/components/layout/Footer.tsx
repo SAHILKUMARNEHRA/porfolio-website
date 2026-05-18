@@ -11,6 +11,14 @@ export default function Footer() {
           <a href={`mailto:${portfolioData.header.email}`} className="text-zinc-400 hover:text-white transition-colors">
             Email
           </a>
+          {portfolioData.header.phones?.map((phone) => {
+            const phoneHref = phone.startsWith("+") ? phone : `+91${phone}`;
+            return (
+              <a key={phone} href={`tel:${phoneHref}`} className="text-zinc-400 hover:text-white transition-colors">
+                {phone}
+              </a>
+            );
+          })}
           <a href={portfolioData.socials.github} target="_blank" rel="noreferrer" className="text-zinc-400 hover:text-white transition-colors">
             GitHub
           </a>

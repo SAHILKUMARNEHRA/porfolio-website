@@ -3,7 +3,7 @@ import { Github, Instagram, Linkedin, Mail, Youtube } from "lucide-react";
 import EyeTrackingAvatar from "../ui/EyeTrackingAvatar";
 
 export default function Contact() {
-  const { socials, projects, footer } = portfolioData;
+  const { socials, projects, footer, header } = portfolioData;
 
   return (
     <section id="contact" className="py-24 bg-zinc-950 text-white relative px-6 md:px-12 flex flex-col items-center overflow-hidden">
@@ -41,6 +41,19 @@ export default function Contact() {
             </a>
           ))}
         </div>
+
+        {header.phones?.length ? (
+          <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-zinc-400 font-mono text-sm">
+            {header.phones.map((phone) => {
+              const phoneHref = phone.startsWith("+") ? phone : `+91${phone}`;
+              return (
+                <a key={phone} href={`tel:${phoneHref}`} className="hover:text-white transition-colors">
+                  {phone}
+                </a>
+              );
+            })}
+          </div>
+        ) : null}
 
         <EyeTrackingAvatar />
       </div>
