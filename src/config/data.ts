@@ -107,6 +107,14 @@ export const portfolioData = {
         image: "/EditlanceX.jpg"
       },
       {
+        name: "SnapLink",
+        description: "Full-stack URL shortener and QR code generator with JWT authentication, custom short codes, a dashboard for link management, and real-time click analytics (device/browser/country).",
+        link: "https://snaplinkqr.vercel.app/",
+        github: "https://github.com/SAHILKUMARNEHRA/SnapLink-URL-Shortener-",
+        tech: ["React", "Node.js", "Express", "MongoDB", "JWT"],
+        image: "/snaplink.jpg"
+      },
+      {
         name: "Nehra Ji Technical",
         description: "Smartphone review and comparison platform for tech recommendations. Added smart recommendation, tech news, and YouTube review integration. Secure admin dashboard.",
         link: "https://nehra-ji-technical.vercel.app/",
@@ -121,14 +129,6 @@ export const portfolioData = {
         github: "https://github.com/SAHILKUMARNEHRA/TECHKART",
         tech: ["React.js", "Tailwind CSS", "Node.js", "Express", "MongoDB"],
         image: "/Techkart.jpg"
-      },
-      {
-        name: "SnapLink",
-        description: "Full-stack URL shortener and QR code generator with JWT authentication, custom short codes, a dashboard for link management, and real-time click analytics (device/browser/country).",
-        link: "https://snaplinkqr.vercel.app/",
-        github: "https://github.com/SAHILKUMARNEHRA/SnapLink-URL-Shortener-",
-        tech: ["React", "Node.js", "Express", "MongoDB", "JWT"],
-        image: "/snaplink.jpg"
       }
     ]
   },
