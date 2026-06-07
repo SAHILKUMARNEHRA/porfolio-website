@@ -99,6 +99,14 @@ export const portfolioData = {
     subtitle: "Learning, Living, and Leveling Up.",
     items: [
       {
+        name: "TECHKART",
+        description: "Smart eCommerce platform for mobiles, laptops, and smartwatches. Allows users to compare devices, view price trends, and get best recommendations.",
+        link: "https://techkart-mcp.vercel.app/",
+        github: "https://github.com/SAHILKUMARNEHRA/TechKartMcp",
+        tech: ["React.js", "Tailwind CSS", "Node.js", "Express", "MongoDB"],
+        image: "/techkart.jpg"
+      },
+      {
         name: "EditlanceX",
         description: "Built a full-stack freelance marketplace connecting clients and editors through structured hiring workflows. Features role-based authentication, job posting, direct hiring, and real-time chat.",
         link: "https://editlancex.vercel.app/",
@@ -121,14 +129,6 @@ export const portfolioData = {
         github: "https://github.com/SAHILKUMARNEHRA/nehra-ji-technical",
         tech: ["React", "TypeScript", "FastAPI", "Python", "PostgreSQL"],
         image: "/Nehrajitechnical.jpg"
-      },
-      {
-        name: "TECHKART",
-        description: "Smart eCommerce platform for mobiles, laptops, and smartwatches. Allows users to compare devices, view price trends, and get best recommendations.",
-        link: "https://techkartshop.vercel.app/",
-        github: "https://github.com/SAHILKUMARNEHRA/TECHKART",
-        tech: ["React.js", "Tailwind CSS", "Node.js", "Express", "MongoDB"],
-        image: "/Techkart.jpg"
       }
     ]
   },
